@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose';
-import { connect } from './db.js';
+import connect from './db.js';
 import addtask from './controllers/addtask.controller.js';
 import gettasks from './controllers/gettasks.controller.js';
 import register from './controllers/register.controller.js';

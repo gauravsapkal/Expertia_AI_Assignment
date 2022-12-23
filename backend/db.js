@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 const MONGODB_URI = process.env.MONGODB_URI
 
-export const connect = () => {
+const connect = () => {
 
     if(mongoose.connection.readyState){
     //    return console('already connected')
@@ -13,3 +13,5 @@ export const connect = () => {
         // return console.log("done")
     }
 };
+
+export default connect;
