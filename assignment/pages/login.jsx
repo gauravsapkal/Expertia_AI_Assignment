@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import { setCookie, hasCookie } from 'cookies-next';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 export default function Login() {
-  // setCookie('token', 'value', options);
+const router = useRouter();
 const [ user, setUser ] = useState({
   username:"",
   password:""
