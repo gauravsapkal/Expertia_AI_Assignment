@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import team from '../public/asssets/team.svg'
+import gear from '../public/asssets/gear.gif'
 export default function Login() {
   const router = useRouter();
   const [user, setUser] = useState({
@@ -107,7 +108,14 @@ export default function Login() {
             <button className="text-white bg-black hover:bg-gray-700 font-medium rounded-lg text-sm w-full sm:w-auto text-center
             p-1 h-9"
               disabled={loading} onClick={handlesubmit}
-            >Login</button>
+            >
+              {
+                loading ? <Image className= "rounded-lg w-8 h-7 m-auto"
+                src={gear}/> : "Login"
+              }
+            </button>
+            
+
 
 
             <p className='m-auto font-light'

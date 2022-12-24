@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import team from '../public/asssets/team.svg'
 import Image from 'next/image'
+import gear from '../public/asssets/gear.gif'
 export default function Register() {
   const router = useRouter();
   const [user, setUser] = useState({
@@ -122,7 +123,12 @@ export default function Register() {
             <button className="text-white bg-black hover:bg-gray-700 font-medium rounded-lg text-sm w-full sm:w-auto text-center
               p-1 h-9"
               disabled={loading} onClick={handlesubmit}
-            >Register</button>
+            >
+              {
+                loading ? <Image className= "rounded-lg w-8 h-7 m-auto"
+                src={gear}/> : "Register"
+              }
+            </button>
 
             <p className='m-auto font-light'
             >Already have an Account ?  <span className='font-semibold text-base'><Link href="/login">Login</Link></span></p>
