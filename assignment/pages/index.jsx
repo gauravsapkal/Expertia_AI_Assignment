@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { hasCookie, deleteCookie, getCookie } from 'cookies-next';
 import jwt_decode from "jwt-decode";
+import gear from '../public/asssets/gear.gif'
 
 export default function Home() {
   const router = useRouter();
@@ -61,17 +62,6 @@ export default function Home() {
     })
   }
 
-
-
-
-
-  // style={{
-  //   height: "900px",
-  //   width: "1440px",
-  //   border: "2px solid teal",
-  //   margin: "auto",
-  //   marginTop:"20px"
-  // }}
 
   const handlesubmit = () => {
     if (tododata == "") {
@@ -149,7 +139,13 @@ export default function Home() {
             <button disabled={loading} onClick={handlesubmit}
             className="w-full bg-black text-white p-1 mt-2 rounded-lg
             hover:bg-gray-700 font-medium text-sm h-9"
-            >Add New Task</button><br />
+            >
+              {
+                loading ? <Image className= "rounded-lg w-8 h-7 m-auto"
+                src={gear}/> : "Add New Task"
+              }
+              
+              </button><br />
 
             <button onClick={handlelogout}
             className="w-full mt-2 p-1 rounded-md"
