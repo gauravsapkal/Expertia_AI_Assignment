@@ -16,19 +16,21 @@ export default function Home() {
 
     // let token = JSON.parse(localStorage.getItem("token"));
 
-    // if(!hasCookie('token'))
-    // router.push('/login')
+    if(!hasCookie('token'))
+    router.push('/login')
+    else{
+      let token = getCookie('token');
+      var decoded = jwt_decode(token);
+      setUser(decoded);
+      getdata();
+    }
 
 
   }, []);
 
 
   useEffect(() => {
-    let token = getCookie('token');
-    var decoded = jwt_decode(token);
-    setUser(decoded);
-
-
+    
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -59,11 +61,6 @@ export default function Home() {
     })
   }
 
-
-  useEffect(() => {
-
-    getdata();
-  }, [])
 
 
 
@@ -104,8 +101,8 @@ export default function Home() {
   }
 
   const handlelogout = ()=>{
-    // deleteCookie("token")
-    // router.push('/login')
+    deleteCookie("token")
+    router.push('/login')
   }
   return (
     <>

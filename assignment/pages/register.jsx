@@ -20,8 +20,8 @@ const { username, email, password } = user;
 
   useEffect(() => {
 
-    // if(hasCookie('token'))
-    // router.push('/')
+    if(hasCookie('token'))
+    router.push('/')
 
   }, []);
 
