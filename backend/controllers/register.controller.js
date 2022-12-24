@@ -51,7 +51,9 @@ try {
 
         return res.status(200).json({
           status: "success",
-          data: token,
+          data: {
+            token
+          },
         });
       }
     } catch (err) {

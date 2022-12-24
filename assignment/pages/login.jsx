@@ -46,6 +46,7 @@ const { username, password } = user;
 
             if(res.status=="success"){
               setCookie('token', res.data.token);
+              console.log(res)
               alert('Login successful')
               router.push('/')
             }
