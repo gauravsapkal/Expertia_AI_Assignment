@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { hasCookie, deleteCookie, getCookie } from 'cookies-next';
 import jwt_decode from "jwt-decode";
 import gear from '../public/asssets/gear.gif'
+import Image from 'next/image'
 
 export default function Home() {
   const router = useRouter();
