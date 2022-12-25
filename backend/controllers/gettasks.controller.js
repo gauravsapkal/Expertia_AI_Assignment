@@ -15,8 +15,13 @@ const gettasks = async (req, res)=>{
 
         if(result){
             const todo = req.body;
+            let today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+            let date = dd + '/' + mm + '/' + yyyy;
 
-            let data = await Exptask.find({userid:result._id});
+            let data = await Exptask.find({userid:result._id, date:date});
 
               return res.status(200).json({
                 status: "success",
